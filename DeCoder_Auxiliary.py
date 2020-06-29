@@ -60,18 +60,18 @@ class PDFlocation():
 
 class toc():
   def __init__(self,ref,refsep,name,begin=None,end=None,level=None):
-    self.ref=self.join(list(filter(lambda item: item, regex.split('\.*',ref))),refsep)
+    self.ref=self.join(list(filter(lambda item: item, re.split('\.*',ref))),refsep)
     self.name=name
     self.begin=begin
     self.end=end
     self.setLevel()
     pass
-  def join(l, sep):
+  def join(self,l, sep):
     out_str = ''
     for i, el in enumerate(l):
         out_str += '{}{}'.format(el, sep)
     return out_str
   def setLevel(self):
-    self.level = len(list(filter(lambda item: item, regex.split('\.*',self.ref))))-1
+    self.level = len(list(filter(lambda item: item, re.split('\.*',self.ref))))-1
     pass
   pass
