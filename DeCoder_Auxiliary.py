@@ -7,6 +7,17 @@ Original file is located at
     https://colab.research.google.com/github/luiscaballeroramos/DeCoder/blob/EC3_1_8_DesignOfJoints/DeCoder_Auxiliary.ipynb
 """
 
+# Commented out IPython magic to ensure Python compatibility.
+# Clone the entire repo.
+!git clone -b EC3_1_8_DesignOfJoints https://github.com/luiscaballeroramos/DeCoder.git DeCoder
+# Change directory into cloned repo
+# %cd DeCoder
+
+import DeCoder_Auxiliary
+
+
+
+
 import regex as re
 from tabulate import tabulate
 
