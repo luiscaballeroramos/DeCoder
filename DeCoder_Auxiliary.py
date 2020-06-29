@@ -9,6 +9,7 @@ Original file is located at
 
 import regex as re
 from tabulate import tabulate
+
 class TOC():
   def __init__(self,refidRegex,refsepRegex,refsep,namRegex,sepRegex,numRegex):
     self.refidRegex=refidRegex
