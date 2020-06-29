@@ -7,12 +7,6 @@ Original file is located at
     https://colab.research.google.com/github/luiscaballeroramos/DeCoder/blob/EC3_1_8_DesignOfJoints/DeCoder_Auxiliary.ipynb
 """
 
-def join(l, sep):
-    out_str = ''
-    for i, el in enumerate(l):
-        out_str += '{}{}'.format(el, sep)
-    return out_str
-
 class TOC():
   def __init__(self,refidRegex,refsepRegex,refsep,namRegex,sepRegex,numRegex):
     self.refidRegex=refidRegex
@@ -63,12 +57,17 @@ class PDFlocation():
 
 class toc():
   def __init__(self,ref,refsep,name,begin=None,end=None,level=None):
-    self.ref=join(list(filter(lambda item: item, re.split('\.*',ref))),refsep)
+    self.ref=self.join(list(filter(lambda item: item, re.split('\.*',ref))),refsep)
     self.name=name
     self.begin=begin
     self.end=end
     self.setLevel()
     pass
+  def join(l, sep):
+    out_str = ''
+    for i, el in enumerate(l):
+        out_str += '{}{}'.format(el, sep)
+    return out_str
   def setLevel(self):
     self.level = len(list(filter(lambda item: item, re.split('\.*',self.ref))))-1
     pass
